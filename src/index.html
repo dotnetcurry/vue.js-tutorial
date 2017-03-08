@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>SurfPics</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">SurfPics</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="foo.html">Foo</a></li>
+                    <li><a href="bar.html">Bar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="app">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix text-muted">search</i>
+                            <input v-on:change="search" id="icon_prefix" type="text" class="validate" v-model="search_term">
+                            <label for="icon_prefix">Search term</label>
+                        </div>
+                    </div>
+                    <div v-if="search_term" class="row text-muted" class="search-box">
+                        <i class="material-icons search">hourglass_empty</i> {{message}}
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col s12 m3" v-for="card in cards">
+                    <sp-card v-bind:card="card"></sp-card>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2017 Copyright SurfPics
+                </div>
+            </div>
+        </footer>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="app.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    </body>
+</html>

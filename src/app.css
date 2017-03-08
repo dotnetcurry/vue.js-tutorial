@@ -1,0 +1,13 @@
+#app {
+    min-height: 460px;
+}
+
+.text-muted {
+    color: lightgrey;
+}
+
+
+.search-box {
+    margin-left: 1em;
+    margin-top: -1em;
+}
